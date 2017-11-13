@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiRENSOFT 项目资金拨付管理</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- jsTree -->
+    <link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+    <!-- steps -->
+    <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+
+    <style>
+        .jstree-open > .jstree-anchor > .fa-folder:before {
+            content: "\f07c";
+        }
+
+        .jstree-default .jstree-icon.none {
+            width: 0;
+        }
+    </style>
+
+</head>
+
+
+
+<body class="">
+<!-- 左侧导航 -->
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div  class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">张辉</strong>
+                             </span> <span class="text-muted text-xs block">管理员 <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="pz_niandugcgl.html"><i class="fa fa-th-large"></i> <span class="nav-label">项目库管理</span></a>
+                </li>
+                <li>
+                    <a href="pz_zijinshenp.html"><i class="fa fa-diamond"></i> <span class="nav-label">资金拨付申请</span> </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">综合查询统计</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="pz_bofutj.html">项目资金拨付统计</a></li>
+                        <li><a href="pz_bofumx.html">项目资金拨付明细</a></li>
+                        <li><a href="pz_bofuhz.html">项目资金拨付汇总</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user-o"></i> <span class="nav-label">系统管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="pz_quanxiangl.html">组织权限管理</a></li>
+                        <li><a href="pz_shujugl.html">数据管理</a></li>
+                        <li><a href="pz_rizhigl.html">日志管理</a></li>
+                        <li><a href="pz_mabiaogl.html">码表管理</a> </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- 以上为导航条 -->
+
+    <!-- 消息及配置菜单 -->
+    <div id="right-sidebar" class="animated">
+        <div class="sidebar-container">
+            <ul class="nav nav-tabs navs-3">
+                <li class="active"><a data-toggle="tab" href="#tab-1">消息通知</a></li>
+                <li><a data-toggle="tab" href="#tab-2">工单任务</a></li>
+                <li class=""><a data-toggle="tab" href="#tab-3"><i class="fa fa-gear"></i></a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-comments-o"></i> 消息通知</h3>
+                        <small><i class="fa fa-tim"></i>你有2个新消息</small>
+                        <div class="pull-right">
+                            <button type="button" class="form-control btn btn-outline btn-primary" data-toggle="modal" data-target="#myChatList">消息列表</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="pull-left text-center">
+                                    <img alt="image" class="img-circle message-avatar" src="img/a1.jpg">
+                                </div>
+                                <div class="pull-right">
+                                    <button type="button" class="form-control btn btn-outline btn-primary" data-toggle="modal" data-target="#myChatHistory">历史信息</button>
+                                </div>
+                                <div class="media-body">
+                                    审批未确认
+                                    <br>
+                                    <small class="text-muted">今天  14:21</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="sidebar-message">
+                            <a href="#">
+                                <div class="pull-left text-center">
+                                    <img alt="image" class="img-circle message-avatar" src="img/a2.jpg">
+                                </div>
+                                <div class="pull-right">
+                                    <button type="button" class="form-control btn btn-outline btn-primary" data-toggle="modal" data-target="#myChatHistory">历史信息</button>
+                                </div>
+                                <div class="media-body">
+                                    新的工单
+                                    <br>
+                                    <small class="text-muted">今天 12:45 </small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="tab-2" class="tab-pane">
+                    <div class="sidebar-title">
+                        <h3> <i class="fa fa-cube"></i> 工单任务</h3>
+                        <small><i class="fa fa-tim"></i> 你有6个新工单.</small>
+                    </div>
+                    <ul class="sidebar-list">
+                        <li>
+                            <a href="#myTask" data-toggle="modal">
+                                <div class="small pull-right m-t-xs"><span class="label label-info">New</span></div>
+                                <h4>11-10标段申请表</h4>
+                                <div class="progress-mini">
+                                </div>
+                                <div class="small text-muted m-t-xs">张三: 2017-10-10 16:16:16</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#myTask" data-toggle="modal">
+                                <div class="small pull-right m-t-xs"></div>
+                                <h4>11-11标段申请表</h4>
+                                <div class="progress-mini">
+                                </div>
+                                <div class="small text-muted m-t-xs">张三: 2017-10-10 15:15:15</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#myTask" data-toggle="modal">
+                                <div class="small pull-right m-t-xs"><span class="label label-info">New</span></div>
+                                <h4>11-12标段申请表</h4>
+                                <div class="progress-mini">
+                                </div>
+                                <div class="small text-muted m-t-xs">张三: 2017-10-10 14:14:14</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#myTask" data-toggle="modal">
+                                <div class="small pull-right m-t-xs"></div>
+                                <h4>11-13标段申请表</h4>
+                                <div class="progress-mini">
+                                </div>
+                                <div class="small text-muted m-t-xs">张三: 2017-10-10 13:13:13</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#myTask" data-toggle="modal">
+                                <div class="small pull-right m-t-xs"></div>
+                                <h4>11-14标段申请表</h4>
+                                <div class="progress-mini">
+                                </div>
+                                <div class="small text-muted m-t-xs">张三: 2017-10-10 12:12:12</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#myTask" data-toggle="modal">
+                                <div class="small pull-right m-t-xs"></div>
+                                <h4>11-15标段申请表</h4>
+                                <div class="progress-mini">
+                                </div>
+                                <div class="small text-muted m-t-xs">张三: 2017-10-10 11:11:11</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div id="tab-3" class="tab-pane">
+                    <div class="sidebar-title">
+                        <h3><i class="fa fa-gears"></i> 设置</h3>
+                        <small><i class="fa fa-tim"></i>自定义消息</small>
+                    </div>
+
+                    <div class="setings-item">
+                            <span>
+                                显示通知
+                            </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                <label class="onoffswitch-label" for="example">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setings-item">
+                            <span>
+                                显示任务
+                            </span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example2">
+                                <label class="onoffswitch-label" for="example2">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-content">
+                        <h4>设置说明</h4>
+                        <div class="small">
+                            自定义
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 消息及配置菜单 -->
+
+
+
+    <div id="page-wrapper" class="gray-bg">
+
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary ">
+                        <h3> LiRENSOFT  资金拨付管理系统</h3>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                    <li>
+                        <a class="right-sidebar-toggle">
+                            <i class="fa fa-tasks"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>项目库管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a>项目库管理</a>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+
+
+        <div class="sidebar-panel" style="left: 0;width: 400px">
+            <div class="file-manager">
+                <h3>工程项目库</h3>
+                <!--
+                <a href="#" class="file-control active">所有</a>
+                <a href="#" class="file-control">施工</a>
+                <a href="#" class="file-control">桥梁</a>
+                <a href="#" class="file-control">安保设施</a>
+                <a href="#" class="file-control">养护工程</a>-->
+                <div class="user-button">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-database"></i> 导入项目 </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal"
+                                    data-target="#xinjianxmxx"><i class="fa fa-database"></i> 新建项目 </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button data-toggle="dropdown" class="btn btn-white btn-sm dropdown-toggle" type="button" aria-expanded="false">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"></a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="input-sm form-control">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary btn-sm">搜索</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <h4>项目树</h4>
+                <div id="jstree1">
+                    <ul>
+                        <li class="jstree-open">17年度工程
+                            <ul>
+                                <li >250省道邳州铁富至市区段改扩建工程
+                                    <ul>
+                                        <li>工程基本信息</li>
+                                        <li>工程合同信息
+                                            <ul>
+                                                <li><a  onclick="javascript:window.open('pz_zijinbfxq.html');">咨询-xxxx公司</a></li>
+                                                <li>设计-xxxx公司</li>
+                                                <li>监理-江苏经纬工程咨询有限公司</li>
+                                            </ul>
+                                        </li>
+                                        <li>标段合同信息
+                                            <ul>
+                                                <li>1标段-施工-中国建筑一局(集团)有限公司</li>
+                                                <li>2标段-施工-xxxx公司</li>
+                                                <li>3标段-施工-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>邳新快速路工程
+                                    <ul>
+                                        <li>工程基本信息</li>
+                                        <li>工程合同信息
+                                            <ul>
+                                                <li>咨询-xxxx公司</li>
+                                                <li>设计-xxxx公司</li>
+                                                <li>监理-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                        <li>标段合同信息
+                                            <ul>
+                                                <li>1标段-施工-xxxx公司</li>
+                                                <li>2标段-施工-xxxx公司</li>
+                                                <li>3标段-施工-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>16年度工程
+                            <ul>
+                                <li>徐邳快速路工程
+                                    <ul>
+                                        <li>工程基本信息</li>
+                                        <li>工程合同信息
+                                            <ul>
+                                                <li>咨询-xxxx公司</li>
+                                                <li>设计-xxxx公司</li>
+                                                <li>监理-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                        <li>标段合同信息
+                                            <ul>
+                                                <li>1标段-施工-xxxx公司</li>
+                                                <li>2标段-施工-xxxx公司</li>
+                                                <li>3标段-施工-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>邳新快速路工程
+                                    <ul>
+                                        <li>工程基本信息</li>
+                                        <li>工程合同信息
+                                            <ul>
+                                                <li>咨询-xxxx公司</li>
+                                                <li>设计-xxxx公司</li>
+                                                <li>监理-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                        <li>标段合同信息
+                                            <ul>
+                                                <li>1标段-施工-xxxx公司</li>
+                                                <li>2标段-施工-xxxx公司</li>
+                                                <li>3标段-施工-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>15年度工程
+                            <ul>
+                                <li>徐邳快速路工程
+                                    <ul>
+                                        <li>工程基本信息</li>
+                                        <li>工程合同信息
+                                            <ul>
+                                                <li>咨询-xxxx公司</li>
+                                                <li>设计-xxxx公司</li>
+                                                <li>监理-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                        <li>标段合同信息
+                                            <ul>
+                                                <li>1标段-施工-xxxx公司</li>
+                                                <li>2标段-施工-xxxx公司</li>
+                                                <li>3标段-施工-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>邳新快速路工程
+                                    <ul>
+                                        <li>工程基本信息</li>
+                                        <li>工程合同信息
+                                            <ul>
+                                                <li>咨询-xxxx公司</li>
+                                                <li>设计-xxxx公司</li>
+                                                <li>监理-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                        <li>标段合同信息
+                                            <ul>
+                                                <li>1标段-施工-xxxx公司</li>
+                                                <li>2标段-施工-xxxx公司</li>
+                                                <li>3标段-施工-xxxx公司</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <h5 class="tag-title">筛选标签</h5>
+                <ul class="tag-list" style="padding: 0">
+                    <li><a href="">设计</a></li>
+                    <li><a href="">监理</a></li>
+                    <li><a href="">咨询</a></li>
+                    <li><a href="">检测</a></li>
+                    <li><a href="">甲供材料</a></li>
+                    <li><a href="">施工</a></li>
+                    <li><a href="">桥梁</a></li>
+                    <li><a href="">安保设施</a></li>
+                    <li><a href="">养护工程</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- 以上：工程菜单 -->
+
+        <!-- 以上：业务内容 -->
+        <div class="wrapper wrapper-content  " style="padding-right: 0px !important;padding-left: 400px !important">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+                            <div class="product-imitation" style="padding: 20px;">
+                                <div class="icon">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                </div>
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    17年
+                                </span>
+                                <small class="text-muted">道路</small>
+                                <p class="product-name"> 250省道邳州铁富至市区段改扩建工程</p>
+                                <div class="small m-t-xs">
+                                    250省道邳州铁富至市区段改扩建工程建设指挥部
+                                </div>
+                                <div class="m-t text-righ">
+                                    <a href="pz_xiangmugl.html" class="btn btn-xs btn-outline btn-primary">详细 <i
+                                            class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+                            <div class="product-imitation" style="padding: 20px;">
+                                <div class="icon">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                </div>
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    17年
+                                </span>
+                                <small class="text-muted">道路</small>
+                                <p class="product-name"> 250省道邳州铁富至市区段改扩建工程</p>
+                                <div class="small m-t-xs">
+                                    250省道邳州铁富至市区段改扩建工程建设指挥部
+                                </div>
+                                <div class="m-t text-righ">
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">详细 <i
+                                            class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+                            <div class="product-imitation" style="padding: 20px;">
+                                <div class="icon">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                </div>
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    17年
+                                </span>
+                                <small class="text-muted">道路</small>
+                                <p class="product-name"> 250省道邳州铁富至市区段改扩建工程</p>
+                                <div class="small m-t-xs">
+                                    250省道邳州铁富至市区段改扩建工程建设指挥部
+                                </div>
+                                <div class="m-t text-righ">
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">详细 <i
+                                            class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 聊天框 -->
+<div class="small-chat-box fadeInRight animated">
+    <div class="heading" draggable="true">
+        <small class="chat-date pull-right">
+            <a href="#tab-person" data-toggle="tab" class="badge badge-primary" style="color: #FFFFFF"><i class="fa fa-address-book" aria-hidden="true"></i>选择</a>
+        </small>
+        Small chat
+    </div>
+
+    <div class="tab-content">
+
+        <div class="tabs-container tab-pane active" id="tab-chat">
+
+            <div class="tabs-left">
+                <ul class="nav nav-tabs">
+                    <li class="active btn-outline"><a data-toggle="tab" href="#tab-6">张三</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-7">李四</a></li>
+                </ul>
+                <div class="tab-content ">
+                    <div id="tab-6" class="tab-pane active">
+                        <div class="content">
+                            <div class="left">
+                                <div class="author-name">张三<small class="chat-date">10:02</small>
+                                </div>
+                                <div class="chat-message active">
+                                    工单审核没？
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="author-name">王五<small class="chat-date">10:24</small>
+                                </div>
+                                <div class="chat-message">
+                                    不合格
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab-7" class="tab-pane">
+                        <div class="content">
+                            <div class="left">
+                                <div class="author-name">李四<small class="chat-date">10:02</small>
+                                </div>
+                                <div class="chat-message active">
+                                    请查看审核表
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="author-name">王五<small class="chat-date">10:24</small>
+                                </div>
+                                <div class="chat-message">
+                                    ok
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-chat footer">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn"> <button
+                                    class="btn btn-primary" type="button">发送
+                </button> </span></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tabs-container tab-pane" id="tab-person">
+
+            <div class="ibox">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>人员列表</h5>
+                        <div class="ibox-tools">
+                            <span class="label pull-right">
+                                <a href="#tab-chat" data-toggle="tab">确认</a>
+                                <!--<button type="button" class="form-control btn btn-outline btn-primary" data-toggle="tab" data-target="#tab-chat">确认</button>-->
+                            </span>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="mail-box">
+
+                            <table class="table table-hover table-mail dataTables-example2">
+                                <tbody>
+                                <tr class="unread">
+                                    <td class="check-mail">
+                                        <input type="checkbox" class="i-checks">
+                                    </td>
+                                    <td class="mail-ontact"><a href="#">张三</a></td>
+                                    <td class="mail-subject"><a href="#">工程部</a></td>
+                                </tr>
+                                <tr class="unread">
+                                    <td class="check-mail">
+                                        <input type="checkbox" class="i-checks">
+                                    </td>
+                                    <td class="mail-ontact"><a href="#">李四</a></td>
+                                    <td class="mail-subject"><a href="#">工程部</a></td>
+                                </tr>
+                                <tr class="unread">
+                                    <td class="check-mail">
+                                        <input type="checkbox" class="i-checks">
+                                    </td>
+                                    <td class="mail-ontact"><a href="#">张三</a></td>
+                                    <td class="mail-subject"><a href="#">工程部</a></td>
+                                </tr>
+                                <tr class="unread">
+                                    <td class="check-mail">
+                                        <input type="checkbox" class="i-checks">
+                                    </td>
+                                    <td class="mail-ontact"><a href="#">张三</a></td>
+                                    <td class="mail-subject"><a href="#">工程部</a></td>
+                                </tr>
+                                <tr class="unread">
+                                    <td class="check-mail">
+                                        <input type="checkbox" class="i-checks">
+                                    </td>
+                                    <td class="mail-ontact"><a href="#">张三</a></td>
+                                    <td class="mail-subject"><a href="#">工程部</a></td>
+                                </tr>
+                                <tr class="unread">
+                                    <td class="check-mail">
+                                        <input type="checkbox" class="i-checks">
+                                    </td>
+                                    <td class="mail-ontact"><a href="#">张三</a></td>
+                                    <td class="mail-subject"><a href="#">工程部</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="small-chat">
+    <span class="badge badge-warning pull-right">1</span>
+    <a class="open-small-chat">
+        <i class="fa fa-comments"></i>
+    </a>
+</div>
+
+
+</div>
+
+<!--模态框 审批表及附件-->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">消息列表</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center pdf-toolbar">
+
+                    <div class="btn-group">
+                        <button id="prev" class="btn btn-white"><i class="fa fa-long-arrow-left"></i> <span class="hidden-xs">Previous</span></button>
+                        <button id="next" class="btn btn-white"><i class="fa fa-long-arrow-right"></i> <span class="hidden-xs">Next</span></button>
+                        <button id="zoomin" class="btn btn-white"><i class="fa fa-search-minus"></i> <span class="hidden-xs">Zoom In</span></button>
+                        <button id="zoomout" class="btn btn-white"><i class="fa fa-search-plus"></i> <span class="hidden-xs">Zoom Out</span></button>
+                        <button id="zoomfit" class="btn btn-white"> 100%</button>
+                        <span class="btn btn-white hidden-xs">Page: </span>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="page_num">
+
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-white" id="page_count">/ 22</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="text-center m-t-md">
+                    <canvas id="the-canvas" class="pdfcanvas border-left-right border-top-bottom b-r-md"></canvas>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!--模态框 消息列表-->
+<div class="modal fade bs-example-modal-lg" id="myChatList" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">消息列表</h4>
+            </div>
+            <div class="modal-body">
+                <div class="m-b-sm border-bottom">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="cxtj_chatfsr">发送人</label>
+                                <input type="text" id="cxtj_chatfsr" name="cxtj_chatfsr" value="" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="cxtj_chatksnd">开始年度</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="cxtj_chatksnd" type="text" class="form-control" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="control-label" for="cxtj_chatjsnd">结束年度</label>
+                            <div class="input-group date">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="cxtj_chatjsnd" type="text" class="form-control" value="">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="cxtj_chatcx">操作</label>
+                                <button type="button" class="form-control btn btn-outline btn-primary" id="cxtj_chatcx">查询</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>发送人</th>
+                        <th>时间</th>
+                        <th>内容</th>
+                        <th>类型</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>张三</td>
+                        <td>2017-10-13 12:10:10</td>
+                        <td>请查看审批表</td>
+                        <td>人员</td>
+                    </tr>
+                    <tr>
+                        <td>李四</td>
+                        <td>2017-10-12 10:10:10</td>
+                        <td>请确认拨款</td>
+                        <td>财务</td>
+                    </tr>
+                    <tr>
+                        <td>管理员</td>
+                        <td>2017-10-11 10:10:10</td>
+                        <td>请重新审批</td>
+                        <td>系统信息</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!--模态框 历史消息-->
+<div class="modal fade bs-example-modal-lg" id="myChatHistory" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">历史消息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="chat-discussion">
+
+                    <div class="chat-message left">
+                        <img class="message-avatar" src="img/a1.jpg" alt="" >
+                        <div class="message">
+                            <a class="message-author" href="#">张三</a>
+                            <span class="message-date">2017-10-10 10:10:10</span>
+                            <span class="message-content">请查看审批</span>
+                        </div>
+                    </div>
+                    <div class="chat-message right">
+                        <img class="message-avatar" src="img/a6.jpg" alt="" >
+                        <div class="message">
+                            <span class="message-date">2017-10-10 11:11:11</span>
+                            <a class="message-author" href="#">王五</a>
+                            <span class="message-content">好的</span>
+                        </div>
+                    </div>
+                    <div class="chat-message right">
+                        <img class="message-avatar" src="img/a6.jpg" alt="" >
+                        <div class="message">
+                            <span class="message-date">2017-10-10 12:12:12</span>
+                            <a class="message-author" href="#">王五</a>
+                            <span class="message-content">请重新提交</span>
+                        </div>
+                    </div>
+                    <div class="chat-message left">
+                        <img class="message-avatar" src="img/a1.jpg" alt="" >
+                        <div class="message">
+                            <a class="message-author" href="#">张三</a>
+                            <span class="message-date">2017-10-10 13:13:13</span>
+                            <span class="message-content">审批未确认</span>
+                        </div>
+                    </div>
+                    <div class="chat-message right">
+                        <img class="message-avatar" src="img/a6.jpg" alt="" >
+                        <div class="message">
+                            <a class="message-author" href="#">王五</a>
+                            <span class="message-date">2017-10-10 15:15:15</span>
+                            <span class="message-content">嗯,明白</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!--模态框 工单任务列表-->
+<div class="modal fade bs-example-modal-lg" id="myTask" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">工单任务</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<!-- FooTable -->
+<script src="js/plugins/footable/footable.all.min.js"></script>
+<!-- jsTree -->
+<script src="js/plugins/jsTree/jstree.min.js"></script>
+<!-- Steps -->
+<script src="js/plugins/steps/jquery.steps.min.js"></script>
+<!-- Sweet alert -->
+<script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $('.footable').footable();
+        $('.footable2').footable();
+        $("#wizard").steps();
+
+        $('.demo1').click(function(){
+            swal({
+                title: "警告",
+                text: "该记录下已发生业务，不可删除或更改！"
+            });
+        });
+
+        $('.demo2').click(function(){
+            swal({
+                title: "成功",
+                text: "数据已保存，请确定!",
+                type: "success"
+            });
+        });
+
+        $('.demo3').click(function () {
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                swal("Deleted!", "Your imaginary file has been deleted.", "success");
+            });
+        });
+
+        $('.demo4').click(function () {
+            swal({
+                    title: "Are you sure?",
+                    text: "Your will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel plx!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false },
+                function (isConfirm) {
+                    if (isConfirm) {
+                        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                    } else {
+                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                    }
+                });
+        });
+
+        $('#jstree1').jstree({
+            'core': {
+                'check_callback': true
+            },
+            'plugins': ['types', 'dnd'],
+            'types': {
+                'default': {
+                    'icon': 'fa fa-folder'
+                },
+                'html': {
+                    'icon': 'fa fa-file-code-o'
+                },
+                'svg': {
+                    'icon': 'fa fa-file-picture-o'
+                },
+                'css': {
+                    'icon': 'fa fa-file-code-o'
+                },
+                'img': {
+                    'icon': 'fa fa-file-image-o'
+                },
+                'js': {
+                    'icon': 'fa fa-file-text-o'
+                }
+
+            }
+        });
+
+
+    });
+</script>
+
+<!-- 新建项目基础信息对话框 -->
+<div class="modal inmodal fade" id="xinjianxmxx"
+     tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">项目基础信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <fieldset class="form-horizontal">
+                            <div class="form-group"><label class="col-sm-4 control-label">项目名称:</label>
+                                <div class="col-sm-8"><input type="text" class="form-control" placeholder="Product name"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4 control-label">指挥部名称:</label>
+                                <div class="col-sm-8"><input type="text" class="form-control" placeholder="Product name"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4 control-label">年度:</label>
+                                <div class="col-sm-8"><input type="text" class="form-control" placeholder="Product name"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4 control-label">项目分类:</label>
+                                <div class="col-sm-8"><input type="text" class="form-control" placeholder="Product name"></div>
+                            </div>
+                            <div class="form-group"><label class="col-sm-4 control-label">项目性质:</label>
+                                <div class="col-sm-8"><input type="text" class="form-control" placeholder="Product name"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                        <fieldset class="form-horizontal">
+                            <div class="form-group">
+                                <label for="message">简介：</label>
+                                <textarea class="form-control" id="message" rows="10" placeholder="简介 ..."></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="pz_xiangmugl.html"
+                   class="btn btn-primary "
+                >保存
+                </a>
+                <button type="button"
+                        class="btn btn-white"
+                        data-dismiss="modal">取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 新建项目基础信息对话框 -->
+
+</body>
+
+</html>
